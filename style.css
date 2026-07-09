@@ -254,9 +254,8 @@ footer{ background:var(--navy); color:rgba(255,255,255,.7); padding:64px 0 28px;
 .center{ text-align:center; }
 .divider{ height:1px; background:var(--line); margin:0; }
 
-/* fade-in on scroll */
-.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
-.reveal.in{ opacity:1; transform:translateY(0); }
+/* fade-in on scroll (disabled for reliability) */
+.reveal{ opacity:1; transform:none; }
 /* ---------- Margin fix (mobile safety net) ---------- */
 .container{
   padding-left:24px !important;
