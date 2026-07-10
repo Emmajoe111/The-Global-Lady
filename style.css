@@ -209,11 +209,27 @@ em{ font-style:italic; color:var(--gold); }
   padding:8px 16px; border-radius:var(--radius-pill);
 }
 /* ---------- Testimonials ---------- */
-.testimonial-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
-@media (max-width:760px){ .testimonial-grid{ grid-template-columns:1fr; } }
+.testimonial-list{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+@media (min-width:761px){
+  .testimonial-list{
+    flex-direction:row;
+  }
+  .testimonial-list .testimonial-card{
+    flex:1;
+  }
+}
 .testimonial-card{
-  background:#fff; border:1px solid var(--line); border-radius:var(--radius-card);
-  padding:28px 24px; display:flex; flex-direction:column; gap:16px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius-card);
+  padding:28px 24px;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
 }
 .testimonial-quote{ font-size:15px; color:var(--ink-dark); font-style:italic; white-space:pre-line; }
 .testimonial-author{ margin-top:auto; }
@@ -266,5 +282,6 @@ h1, h2, h3, p{
   overflow-wrap:break-word;
   word-break:break-word;
 }
-/* testimonial-to-CTA gap fix */
-.reveal:has(.testimonial-grid){ padding-bottom: 20px !important; }
+/* extra breathing room around testimonials + CTA */
+.reveal:has(.testimonial-list){ padding-top: 40px; }
+.reveal:has(.cta-banner){ padding-top: 40px; }
